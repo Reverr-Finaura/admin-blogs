@@ -54,7 +54,7 @@ export const getBlogsFromDatabase = async () => {
   try {
     let blogs = [];
     await (
-      await getDocs(collection(database, `Blogs`))
+      await getDocs(collection(database, `Blogs2`))
     ).forEach((doc) => {
       blogs.push({ ...doc.data() });
     });
@@ -68,7 +68,7 @@ export const getBlogsFromDatabase = async () => {
 
 export const addBlogInDatabase = async (bid, data) => {
   try {
-    return await setDoc(doc(database, "Blogs", bid), data);
+    return await setDoc(doc(database, "Blogs2", bid), data);
   } catch (err) {
     console.log("Err: ", err);
   }
@@ -77,7 +77,7 @@ export const addBlogInDatabase = async (bid, data) => {
 
 export const deleteBlogInDatabse = async (bid) => {
   try {
-    return await deleteDoc(doc(database, "Blogs", bid));
+    return await deleteDoc(doc(database, "Blogs2", bid));
   } catch (err) {
     console.log("Err: ", err);
   }
