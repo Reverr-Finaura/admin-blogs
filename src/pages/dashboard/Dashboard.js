@@ -43,7 +43,7 @@ const Dashboard = () => {
                 Fetching <HourglassSplit /> Blogs
               </h3>
             ) : (
-              blogs.blogs.map((data) => (
+              blogs?.blogs?.map((data) => (
                 <BlogDisplayCard key={data.id} data={data} />
               ))
             )}
